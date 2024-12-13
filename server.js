@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const sequelize = require('./config/database');
 const usuariosRouter = require('./routes/usuarios');
@@ -12,6 +13,7 @@ const alumnosRouter = require('./routes/alumnos');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/usuarios', usuariosRouter);
