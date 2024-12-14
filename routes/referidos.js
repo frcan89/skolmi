@@ -67,6 +67,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const apiKey = await generarApiKeyUnica();
+    console.log(req.body.userid)
     const usuarioReferidor = await buscarUsuarioPorApiKey(req.body.userid);
     const data = {
       apiKey: apiKey,
